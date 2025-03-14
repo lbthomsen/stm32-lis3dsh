@@ -61,8 +61,10 @@ void Error_Handler(void);
 #define SPI1_CS_GPIO_Port GPIOE
 #define MEMS_INT1_Pin GPIO_PIN_0
 #define MEMS_INT1_GPIO_Port GPIOE
+#define MEMS_INT1_EXTI_IRQn EXTI0_IRQn
 #define MEMS_INT2_Pin GPIO_PIN_1
 #define MEMS_INT2_GPIO_Port GPIOE
+#define MEMS_INT2_EXTI_IRQn EXTI1_IRQn
 
 /* USER CODE BEGIN Private defines */
 

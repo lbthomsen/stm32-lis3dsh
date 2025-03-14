@@ -15,31 +15,31 @@
  ******************************************************************************
  */
 
-#ifndef LIS3DSH_H_
-#define LIS3DSH_H_
+#ifndef LIS3XX_H_
+#define LIS3XX_H_
 
 #ifdef DEBUG
 #include <stdio.h>
-#define LIS3DSH_DEBUG(...) printf(__VA_ARGS__)
+#define LIS3XX_DEBUG(...) printf(__VA_ARGS__)
 #else
-        LIS3DSH_DEBUG(...)
+        LIS3XX_DEBUG(...)
 #endif
 
-#define LIS3DSH_ID 0x3f  // MUST be returned from the WHO_AM_I register
+#define LIS3XX_ID 0x2b  // MUST be returned from the WHO_AM_I register
 
-#define LIS3DSH_WHO_AM_I 0x0f
+#define LIS3XX_WHO_AM_I 0x0f
 
 typedef struct {
     SPI_HandleTypeDef *spi;
     GPIO_TypeDef *cs_port;
     uint16_t cs_pin;
-} lis3dsh_handler_t;
+} lis3xx_handler_t;
 
 typedef enum {
     OK,
     Error
-} lis3dsh_result_t;
+} lis3xx_result_t;
 
-lis3dsh_result_t lis3dsh_init(lis3dsh_handler_t *lis3dsh, SPI_HandleTypeDef *spi, GPIO_TypeDef *cs_port, uint16_t cs_pin);
+lis3xx_result_t lis3xx_init(lis3xx_handler_t *lis3xx, SPI_HandleTypeDef *spi, GPIO_TypeDef *cs_port, uint16_t cs_pin);
 
-#endif /* LIS3DSH_H_ */
+#endif /* LIS3XX_H_ */
